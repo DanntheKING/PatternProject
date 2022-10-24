@@ -9,7 +9,7 @@ namespace Proxy.cs
     {
         public static void Main(string[] args)
         {
-            // Create math proxy
+            // Create proxy
             BagCheckArea securityProxy = new BagCheckArea();
 
             // Let the Passengers board
