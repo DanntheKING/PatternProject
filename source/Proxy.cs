@@ -1,9 +1,9 @@
-﻿//Amiyah Frierson
+//Amiyah Frierson
 //CSC 403-002
 //24 October 2022
 
 using System;
-namespace ProxyPattern
+namespace Proxy.cs
 {
     public class Boarding
     {
@@ -31,14 +31,7 @@ namespace ProxyPattern
     {
         public void CheckBags(string item1, string item2) 
         {
-            if ((String.Equals(item1, "contraband!")) || (String.Equals(item2, "contraband!")))
-            {
-                Console.WriteLine("The passenger with contraband was detained!");
-            }
-            else
-            {
-                Console.WriteLine("The passenger boarded the plane without issue.");
-            }
+             Console.WriteLine("The passenger boarded the plane without issue.");
         }
     }
 
@@ -48,7 +41,14 @@ namespace ProxyPattern
         private Security guard = new Security();
         public void CheckBags(string item1, string item2)
         {
-            guard.CheckBags(item1, item2);
+            if ((String.Equals(item1, "contraband!")) || (String.Equals(item2, "contraband!")))
+            {
+                Console.WriteLine("The alarm went off; the passenger with contraband was detained!");
+            }
+            else
+            {
+                guard.CheckBags(item1, item2);
+            }
         }
     }
 }
